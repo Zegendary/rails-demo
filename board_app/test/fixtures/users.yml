@@ -1,0 +1,5 @@
+user1:
+  id: 1
+  name: frank
+  email: zxw1992513@qq.com
+  password_digest: <%= BCrypt::Password.create('zxw1992513') %>
