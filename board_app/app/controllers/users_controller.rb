@@ -21,19 +21,23 @@ class UsersController < ApplicationController
         format.json { render :index, status: :created, location: @user }
       else
         format.html { render :new }
-        format.json { render json: @user.errors, status: :unprocessable_entity }
+        format.json { render json: @user.errors, status: :'412' }
       end
     end
   end
 
+  def show
+
+  end
+
   private
   # Use callbacks to share common setup or constraints between actions.
-  def set_User
+  def set_user
     @user = User.find(params[:id])
   end
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def user_params
-    params.require(:user).permit(:name, :email, :password_digest, :password_confirmation)
+    params.require(:user).permit(:name, :email, :password, :password_confirmation)
   end
 end

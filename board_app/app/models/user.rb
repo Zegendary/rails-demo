@@ -3,6 +3,6 @@ class User < ApplicationRecord
 
   validates :email, presence: true
   validates_format_of :email, :with => /\A.+@.+\Z/i
-  validates :password_digest, presence: true, confirmation: true, length: { minimum: 5 }
+  validates :password, presence: true, confirmation: true, length: { minimum: 5 }
   validates :password_confirmation, presence: true
 end

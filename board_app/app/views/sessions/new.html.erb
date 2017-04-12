@@ -1,0 +1,17 @@
+<h1>登陆</h1>
+
+<%= form_for :session, url: login_url, method: :post do |f| %>
+    <div class="field">
+      <%= f.label :email %>
+      <%= f.text_field :email, placeholder: "input your email"  %>
+    </div>
+
+    <div class="field">
+      <%= f.label :'密码' %>
+      <%= f.password_field :password, placeholder: "input your password" %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit value:'登陆' %>
+    </div>
+<% end %>
